@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<style>
+		body {
+			opacity: 1;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250120020505">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__top">
+					<div class="header__logo-body">
+						<a href="#" class="header__logo"><img src="img/header/logo.png" alt="#"></a>
+						<div class="header__logo-text">
+							<span>РEMМЕБЕЛЬ39</span>
+							<p>Перетяжка мебели в Калининграде</p>
+						</div>
+					</div>
+					<div data-da=".menu, 992" class="header__addres-body">
+						<img class="header__addres-img" src="img/header/local.png" alt="#">
+						<p class="header__addres-text">г. Калининград, ул. Яблочная, 3</p>
+					</div>
+					<div data-da=".menu, 768" class="header__social-body">
+						<p class="header__social-text">Пишите, мы онлайн</p>
+						<div class="header__social-icon">
+							<img src="img/header/whatsap.png" alt="#">
+							<img src="img/header/vk.png" alt="#">
+							<img src="img/contacts/telegram.png" alt="#">
+						</div>
+					</div>
+					<a data-da=".menu, 768" href="#" data-popup="#popup-two" class="header__button">
+						<span>Заказать звонок</span>
+						<img src="img/header/arrow.png" alt="#">
+					</a>
+					<div data-da=".menu, 550" class="header__clock">
+						<p>Пн-Вс: c 8:30 до 20:00</p>
+						<a href="tel:79622639265">+7 (962) 263-92-65</a>
+					</div>
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+
+				</div>
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item menu__item--img"><img src="img/header/home.png" alt="#"></li>
+							<li class="menu__item"><a href="#" data-goto-speed="100" data-goto=".categories" class="menu__link">Услуги</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Калькулятор</a></li>
+							<li class="menu__item"><a href="#" data-goto=".tips" class="menu__link">эТАПЫ РАБОТ</a></li>
+							<li class="menu__item"><a href="#" data-goto=".slider" class="menu__link">нАШИ РАБОТЫ</a></li>
+							<li class="menu__item"><a href="#" data-goto=".guarantee" data-goto-speed="1000" class="menu__link">гАРАНТИЯ</a></li>
+							<li class="menu__item"><a href="#" data-goto=".contact" class="menu__link">Контакты</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<div id="popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close"><img src="img/popup/noroot.png" alt="#"></button>
+					<div class="popup__body">
+						<h2 class="popup__title">Оставьте заявку на расчёт стоимости</h2>
+						<div class="popup__text">Зафиксируем за вашим номером дополнительную <span style="color: rgb(33, 178, 36); font-weight: 600;">скидку в 1000₽</span></div>
+						<form data-popup-message="#form-message" data-ajax action="files/sendmail/sendmail.php" method="POST">
+							<div class="popup__input-body">
+								<label class="popup__label">Ваш телефон</label>
+								<input data-required id="phone" type="text" name="phone" data-error="Заполните поле" placeholder="+375 (__) ___-__-__" class="data-contact__input input popup__input">
+							</div>
+							<button type="submit" class="popup__button button"><span>Оставить заявку</span>
+								<img src="img/hero/arrow.png" alt="#"></button>
+							<div class="checkbox">
+								<input data-required id="c_2" data-error="Ознакомтесь с обработкой своих данных" class="checkbox__input" type="checkbox" value="Принято" name="form[]">
+								<label for="c_2" class="checkbox__label"><span class="checkbox__text">Соглашаюсь с <a href="#" aria-haspopup="dialog"> <u>обработкой своих данных</u></a></span></label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-two" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close"><img src="img/popup/noroot.png" alt="#"></button>
+					<div class="popup__body">
+						<h2 class="popup__title">Заказать обратный звонок</h2>
+						<div class="popup__text">Введите свой номер и мы перезвоним через 4 минуты
+
+						</div>
+						<form data-popup-message="#form-message" data-ajax action="files/sendmail/sendmail.php" method="POST">
+							<div class="popup__input-body">
+								<label class="popup__label">Ваш телефон</label>
+								<input data-required id="phone" type="text" name="phone" data-error="заполните поле" placeholder="+375 (__) ___-__-__" class="data-contact__input input popup__input">
+							</div>
+							<button type="submit" class="popup__button button">
+								Заказать звонок </button>
+							<div class="checkbox">
+								<input data-required id="c_3" data-error="Ознакомтесь с обработкой своих данных" class="checkbox__input" type="checkbox" value="Принято" name="check">
+								<label for="c_3" class="checkbox__label"><span class="checkbox__text">Соглашаюсь с <a href="#" aria-haspopup="dialog"> <u>обработкой своих данных</u></a></span></label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="form-message" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close"><img src="img/popup/noroot.png" alt="#"></button>
+					<div class="popup__body">
+						<h2 style="font-weight: 800; line-height: 150%;" class="popup__title ">Спасибо, ваша форма успешно
+							отправлена!!!</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<main class="page">
+			<section class="page__hero hero">
+				<img class="hero__img-bg" src="img/hero/01.jpg" alt="#">
+				<div class="hero__container">
+					<h1 class="hero__title"><strong style="font-weight: 900;">Перетяжка мебели</strong><span>по
+							выгодным
+							ценам</span></h1>
+					<div class="hero__subtitle"><span class="hero__subtitle-decor hero__subtitle-decor--one"></span>
+						<span class="hero__subtitle-decor hero__subtitle-decor--two"></span>
+						<span class="hero__subtitle-decor hero__subtitle-decor--threa"></span>
+						Ткани от бюджета до
+						премиум сегмента
+					</div>
+					<div class="hero__items">
+						<div class="hero__item">
+							<img class="hero__image" src="img/hero/chek.png" alt="#">
+							<div class="hero__text">Гарантия <strong>24 месяца</strong></div>
+						</div>
+
+						<div class="hero__item">
+							<img class="hero__image" src="img/hero/chek.png" alt="#">
+							<div class="hero__text">Работаем <strong>по договору</strong></div>
+						</div>
+						<div class="hero__item">
+							<img class="hero__image" src="img/hero/chek.png" alt="#">
+							<div class="hero__text">Сделаем <strong>дешевле конкурентов</strong></div>
+						</div>
+					</div>
+					<a href="#" data-popup="#popup" class="hero__button button"><span>Рассчитать стоимость</span><img src="img/hero/arrow.png" alt="#"></a>
+				</div>
+			</section>
+			<section class="page__categories categories">
+				<div class="categories__container">
+					<h2 data-watch class="categories__title title">Какую мебель мы перетягиваем</h2>
+					<div class="categories__items">
+						<img data-prlx-mouse class="categories__decor" src="img/categories/decor.png" alt="#">
+						<img data-prlx-mouse class="categories__decor-two" src="img/categories/decor-2.png" alt="#">
+
+						<div class="categories__item">
+							<img class="categories__img-bg" src="img/categories/01.png" alt="#">
+							<div class="categories__body">
+								<div class="categories__name">Диван от 6.000₽</div>
+								<div class="categories__text">Прямой | Угловой Срок от 2 дней</div>
+								<a data-popup="#popup" href="#" class="categories__button button"><span>Оставить заявку</span>
+									<img src="img/hero/arrow.png" alt="#"></a>
+							</div>
+						</div>
+						<div class="categories__item">
+							<img class="categories__img-bg" src="img/categories/02.jpg" alt="#">
+							<div class="categories__body">
+								<div class="categories__name">Кровать от 5.000₽</div>
+								<div class="categories__text">Срок - от 2 дней</div>
+								<a data-popup="#popup" href="#" class="categories__button button"><span>Оставить заявку</span>
+									<img src="img/hero/arrow.png" alt="#"></a>
+							</div>
+						</div>
+						<div class="categories__item">
+							<img class="categories__img-bg" src="img/categories/03.jpg" alt="#">
+							<div class="categories__body">
+								<div class="categories__name">Кресло от 2.000₽</div>
+								<div class="categories__text">Срок - от 1 дня</div>
+								<a data-popup="#popup" href="#" class="categories__button button"><span>Оставить заявку</span>
+									<img src="img/hero/arrow.png" alt="#"></a>
+							</div>
+						</div>
+						<div class="categories__item">
+							<img class="categories__img-bg" src="img/categories/04.jpg" alt="#">
+							<div class="categories__body">
+								<div class="categories__name">Стул от 400₽</div>
+								<div class="categories__text">Срок - от 2 часов</div>
+								<a data-popup="#popup" href="#" class="categories__button button"><span>Оставить заявку</span>
+									<img src="img/hero/arrow.png" alt="#"></a>
+							</div>
+						</div>
+						<div class="categories__item">
+							<img class="categories__img-bg" src="img/categories/05.jpg" alt="#">
+							<div class="categories__body">
+								<div class="categories__name">Изголовье от 2000₽</div>
+								<div class="categories__text">Срок - от 1 дня</div>
+								<a data-popup="#popup" href="#" class="categories__button button"><span>Оставить заявку</span>
+									<img src="img/hero/arrow.png" alt="#"></a>
+							</div>
+						</div>
+						<div class="categories__item">
+							<img class="categories__img-bg" src="img/categories/06.jpg" alt="#">
+							<div class="categories__body">
+								<div class="categories__name">Диван от 6.000₽</div>
+								<div class="categories__text">Прямой | Угловой Срок от 2 дней</div>
+								<a data-popup="#popup" href="#" class="categories__button button"><span>Оставить заявку</span>
+									<img src="img/hero/arrow.png" alt="#"></a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<section class="page__tips tips">
+				<img data-prlx-mouse class="tips__decor" src="img/tips/decor.png" alt="#">
+
+				<div class="tips__container">
+					<img data-prlx-mouse class="tips__decor-two " src="img/tips/decor-2.png" alt="#">
+					<h2 data-watch class="tips__title title">Сделаем перетяжку мебели <span>всего в 3 шага</span></h2>
+					<div class="tips__body">
+						<div class="tips__image tippy">
+							<img src="img/tips/01.jpg" alt="#">
+							<div class="tippy__item">
+								<div data-tippy-content="Заменим наполнитель" class="tippy__tip tippy__tip-1">
+									<span>+ </span>
+								</div>
+								<div data-tippy-content="Перетянем обивку" class="tippy__tip tippy__tip-2"><span>+</span>
+								</div>
+								<div data-tippy-content="Отремонтируем каркас" class="tippy__tip tippy__tip-3"><span>+</span>
+								</div>
+								<div data-tippy-content=" Починим механизмы" class="tippy__tip tippy__tip-4"><span>+</span>
+								</div>
+
+							</div>
+
+
+						</div>
+
+						<div class="tips__content">
+							<div class="tips__item">
+								<div class="tips__number">1</div>
+								<div class="tips__text"><a href="#">Оставьте заявку на сайте</a>и получите расчёт стоимости
+									ремонта
+									вашей мебели</div>
+							</div>
+							<div class="tips__item">
+								<div class="tips__number">2</div>
+								<div class="tips__text"><a href="#">Оставьте заявку на сайте</a>и получите расчёт стоимости
+									ремонта
+									вашей мебели</div>
+							</div>
+							<div class="tips__item">
+								<div class="tips__number">3</div>
+								<div class="tips__text"><a href="#">Оставьте заявку на сайте</a>и получите расчёт стоимости
+									ремонта
+									вашей мебели</div>
+							</div>
+							<a href="#" class="tips__button button">Оценить по фото в WhatsApp <img src="img/hero/arrow.png" alt="#"></a>
+							<img class="tips__img-arrow" src="img/tips/arrow-1.png" alt="#">
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<section class="page__slider slider">
+				<div class="slider__container">
+					<img data-prlx-mouse class="slider__decor" src="img/categories/decor.png" alt="#">
+					<img data-prlx-mouse class="slider__decor-two" src="img/categories/decor-2.png" alt="#">
+					<h2 data-watch class="slider__title title">Каждую неделю выполняем 50-70 заказов</h2>
+					<div class="slider__body">
+						<!-- Оболонка слайдера -->
+						<div class="slider__wrapper">
+							<div class="slider__slider swiper">
+								<!-- Частина слайдера, що рухається -->
+								<div data-gallery class="slider__wrapper swiper-wrapper">
+									<!-- Слайд -->
+									<a href="img/slider/01.jpg" class="slider__slide swiper-slide">
+										<img src="img/slider/01.jpg">
+									</a>
+									<a href="img/slider/02.jpg" class="slider__slide swiper-slide">
+										<img src="img/slider/02.jpg">
+									</a>
+								</div>
+								<div class="swiper-pagination"></div>
+								<button type="button" class="swiper-button-prev"></button>
+								<button type="button" class="swiper-button-next"></button>
+
+							</div>
+							<div class="slider__bottom bottom-slider">
+								<h3 class="bottom-slider__title">Прямой Диван в гостинной</h3>
+								<div class="bottom-slider__body">
+									<ul class="bottom-slider__list">
+										<li class="bottom-slider__item">Частично заменили наполнитель</li>
+										<li class="bottom-slider__item">Заменили обивку</li>
+										<li class="bottom-slider__item">Забрали и доставили обратно на дом</li>
+										<li class="bottom-slider__item">Гарантия 2 года</li>
+									</ul>
+									<div class="bottom-slider__content">
+										<p class="bottom-slider__text">Стоимость работы:</p>
+										<p class="bottom-slider__price">У нас - 8.300₽</p>
+										<div class="bottom-slider__price bottom-slider__price--red">У конкурентов - 15.000₽</div>
+										<a data-popup="#popup" href="#" class="bottom-slider__button button"><span>Оценить свою
+												мебель</span> <img src="img/hero/arrow.png" alt="#"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="slider__wrapper">
+							<div class="slider__slider swiper">
+								<!-- Частина слайдера, що рухається -->
+								<div data-gallery class="slider__wrapper swiper-wrapper">
+									<!-- Слайд -->
+									<a href="img/slider/03.jpg" class="slider__slide swiper-slide">
+										<img src="img/slider/03.jpg">
+									</a>
+									<a href="img/slider/04.jpg" class="slider__slide swiper-slide">
+										<img src="img/slider/04.jpg">
+									</a>
+								</div>
+								<div class="swiper-pagination"></div>
+								<button type="button" class="swiper-button-prev"></button>
+								<button type="button" class="swiper-button-next"></button>
+
+							</div>
+							<div class="slider__bottom bottom-slider">
+								<h3 class="bottom-slider__title">Прямой Диван в гостинной</h3>
+								<div class="bottom-slider__body">
+									<ul class="bottom-slider__list">
+										<li class="bottom-slider__item">Частично заменили наполнитель</li>
+										<li class="bottom-slider__item">Заменили обивку</li>
+										<li class="bottom-slider__item">Забрали и доставили обратно на дом</li>
+										<li class="bottom-slider__item">Гарантия 2 года</li>
+									</ul>
+									<div class="bottom-slider__content">
+										<p class="bottom-slider__text">Стоимость работы:</p>
+										<p class="bottom-slider__price">У нас - 8.300₽</p>
+										<div class="bottom-slider__price bottom-slider__price--red">У конкурентов - 15.000₽</div>
+										<a data-popup="#popup" href="#" class="bottom-slider__button button"><span>Оценить свою
+												мебель</span> <img src="img/hero/arrow.png" alt="#"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+			<section class="page__guarantee guarantee">
+				<img data-prlx-mouse class="guarantee__decor" src="img/categories/decor.png" alt="#">
+
+				<div class="guarantee__container">
+					<h2 data-watch class="guarantee__title title">Наша гарантия не на словах, а на деле</h2>
+					<div class="guarantee__subtitle">Относимся к каждому заказу со всей ответственностью</div>
+					<div class="guarantee__body">
+						<img class="guarantee__img-bg" src="img/guarantee/bg.png" alt="#">
+						<ul class="guarantee__list">
+							<li><img src="img/guarantee/check.png" alt="#"> Заключаем договор, в котором указаны все
+								гарантийные обязательства</li>
+							<li>
+								<img src="img/guarantee/check.png" alt="#">
+								<div class="guarantee__list-block">
+									Получили более 300 отзывов
+									<span> Безупречная
+										репутация на 5 звёзд
+									</span>
+								</div>
+							</li>
+						</ul>
+						<div class="guarantee__items">
+							<div class="guarantee__item">
+								<img class="guarantee__item-img" src="img/guarantee/01.jpg" alt="">
+							</div>
+							<div class="guarantee__item guarantee__item--two">
+								<div class="guarantee__block">
+									<p class="guarantee__item-text">Реммебель39
+									</p>
+									<img class="guarantee__item-img guarantee__item-img--two" src="img/guarantee/02.png" alt="">
+								</div>
+								<img class="guarantee__logo" src="img/header/logo.png" alt="#">
+							</div>
+							<div class="guarantee__item">
+								<img class="guarantee__item-img" src="img/guarantee/03.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__why why">
+				<div class="why__container">
+					<h2 data-watch class="why__title title">Нас часто спрашивают..</h2>
+					<div class="why__body">
+						<div data-spollers class="spollers">
+							<div class="spollers__item">
+								<button type="button" data-spoller class="spollers__title">Можно ли прислать вам фото мебели для
+									оценки стоимости?
+									<svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										<g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square">
+											<g transform="translate(1.000000, 1.000000)" stroke="#ffffff">
+												<path d="M0,11 L22,11"></path>
+												<path d="M11,0 L11,22"></path>
+											</g>
+										</g>
+									</svg>
+								</button>
+								<div class="spollers__body">
+									Да, Вы можете
+									прислать фотографию мебели мастеру <a href="#" target="_blank" rel="noreferrer noopener" style="color: rgb(33, 178, 36);"><strong><u>на WhatsApp</u></strong></a>, Viber и
+									узнать предварительную стоимость.<br>Окончательную стоимость считает специалист после
+									замера исходя из расхода и стоимости выбранного материала.
+
+
+								</div>
+							</div>
+							<div class="spollers__item">
+								<button type="button" data-spoller class="spollers__title">Как происходит работа? <svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										<g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square">
+											<g transform="translate(1.000000, 1.000000)" stroke="#ffffff">
+												<path d="M0,11 L22,11"></path>
+												<path d="M11,0 L11,22"></path>
+											</g>
+										</g>
+									</svg></button>
+								<div class="spollers__body">Работа по заказу начинается с момента оформления заявки на вызов
+									мастера- замерщика. Сделать это можно как по телефону, так и на сайте. Затем, в удобное для
+									Вас время, к Вам приезжает наш мастер, который привозит с собой образцы обивочных материалов,
+									рассчитывает стоимость ремонта и оформляет договор.</div>
+							</div>
+							<div class="spollers__item">
+								<button type="button" data-spoller class="spollers__title">Какая предоплата за работу? <svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										<g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square">
+											<g transform="translate(1.000000, 1.000000)" stroke="#ffffff">
+												<path d="M0,11 L22,11"></path>
+												<path d="M11,0 L11,22"></path>
+											</g>
+										</g>
+									</svg></button>
+								<div class="spollers__body">В начале мы берём оплату только за материалы. Она составляет 30-50%
+									от заказа. Остальное можно оплатить по факту, после проверки мебели</div>
+							</div>
+						</div>
+						<div data-spollers class="spollers">
+							<div class="spollers__item">
+								<button type="button" data-spoller class="spollers__title">Можно ли сделать перетяжку на
+									дому? <svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										<g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square">
+											<g transform="translate(1.000000, 1.000000)" stroke="#ffffff">
+												<path d="M0,11 L22,11"></path>
+												<path d="M11,0 L11,22"></path>
+											</g>
+										</g>
+									</svg></button>
+								<div class="spollers__body">Да. Наша компания предоставляет такую услугу. Вся работа будет
+									происходить у Вас дома, без перевозки мебели.</div>
+							</div>
+							<div class="spollers__item">
+								<button type="button" data-spoller class="spollers__title">Вы можете забрать мебель на время
+									ремонта? <svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										<g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square">
+											<g transform="translate(1.000000, 1.000000)" stroke="#ffffff">
+												<path d="M0,11 L22,11"></path>
+												<path d="M11,0 L11,22"></path>
+											</g>
+										</g>
+									</svg></button>
+								<div class="spollers__body">Да, мы можем забрать Вашу мебель в мастерскую произвести все
+									необходимые работы по ремонту и перетяжке, а после доставить обратно по указанному адресу.
+									Стоимость перевозки бесплатно в пределах города. Перевозка по области рассчитывается
+									индивидуально.</div>
+							</div>
+							<div class="spollers__item">
+								<button type="button" data-spoller class="spollers__title">Можно ли приехать к вам на
+									производство? <svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										<g stroke="none" stroke-width="2px" fill="none" fill-rule="evenodd" stroke-linecap="square">
+											<g transform="translate(1.000000, 1.000000)" stroke="#ffffff">
+												<path d="M0,11 L22,11"></path>
+												<path d="M11,0 L11,22"></path>
+											</g>
+										</g>
+									</svg></button>
+								<div class="spollers__body">Конечно. Вы можете лично посетить наш цех по адресу: Россия, г.
+									Калининград, ул. Яблочная, 3. Позвоните мастеру перед приездом, чтобы он вас встретил - <a href="tel:+79622639265" style="color: rgb(33, 178, 36);"><strong><u>+7 (962)
+												263-92-65</u></strong></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="#" class="why__button button"><span>Задать вопрос в WhatsApp</span><img src="img/hero/arrow.png" alt="#"></a>
+				</div>
+			</section>
+			<section class="page__contact contact">
+				<div class="contact__container">
+					<h2 data-watch class="contact__title title">Контакты</h2>
+					<div class="contact__body">
+						<div class="contact__data data-contact">
+							<div class="data-contact__addres"><img src="img/contacts/local.png" alt="#"> <span>г. Калининград,
+									Яблочная улица, 3</span> </div>
+							<div class="data-contact__clock"><img src="img/contacts/clock.png" alt="#"><span>Пн-Вс: с 8:30 до
+									20:00</span></div>
+							<div class="data-contact__call"><img src="img/contacts/call.png" alt="#"><a href="tel:+79622639265">+7 (962) 263-92-65</a></div>
+							<div class="data-contact__social-body">
+								<div class="data-contact__social-text">Пишите, мы онлайн</div>
+								<div class="data-contact__social">
+									<img src="img/contacts/whatsap.png" alt="#">
+									<img src="img/contacts/telegram.png" alt="#">
+									<img src="img/contacts/vk.png" alt="#">
+								</div>
+							</div>
+							<form data-popup-message="#form-message" data-ajax class="data-contact__form" action="files/sendmail/sendmail.php" method="POST">
+								<input data-required id="phone" type="text" name="phone" data-error="заполните поле" placeholder="+375 (__) ___-__-__" class="data-contact__input input">
+								<div class="checkbox">
+									<input data-required id="c_1" data-error="Ознакомтесь с обработкой своих данных" class="checkbox__input" type="checkbox" value="Принято" name="check">
+									<label for="c_1" class="checkbox__label"><span class="checkbox__text">Соглашаюсь с <a href="#" style="color: rgb(22, 216, 0);"><u>обработкой своих
+													данных</u></a></span>
+
+									</label>
+								</div>
+								<button type="submit" class="data-contact__button button"><span>Заказать звонок</span><img src="img/hero/arrow.png" alt="#"></button>
+
+							</form>
+						</div>
+						<div class="contact__production production-contact">
+							<div class="production-contact__items">
+								<h3 class="production-contact__title">До встречи на производстве</h3>
+
+								<div class="production-contact__item">
+									<img class="production-contact__image" src="img/contacts/01.jpg" alt="#">
+									<img class="production-contact__image" src="img/contacts/02.jpg" alt="#">
+
+								</div>
+							</div>
+							<div class="production-contact__items">
+								<h3 class="production-contact__title">До встречи на замере</h3>
+								<div class="production-contact__item">
+									<img class="production-contact__image" src="img/contacts/03.jpg" alt="#">
+									<img class="production-contact__image" src="img/contacts/04.jpg" alt="#">
+
+								</div>
+							</div>
+						</div>
+						<div class="contact__map map-contact">
+							<div class="map-contact__top">
+								<h4 class="map-contact__title">Адрес на картах</h4>
+								<a href="#">Проложить маршрут →</a>
+							</div>
+							<div class="map-contact__image">
+								<img src="img/contacts/map.jpg" alt="#">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__logo-body">
+					<a href="#" class="footer__logo"><img src="img/header/logo.png" alt="#"></a>
+					<div class="footer__logo-text">
+						<span>РEMМЕБЕЛЬ39</span>
+						<p>Перетяжка мебели в Калининграде</p>
+					</div>
+				</div>
+				<div class="footer__text">© Все права защищены. Сайт не является публичной офертой.<a href="#popup:pk" role="button">Политика конфиденциальности</a>
+				</div>
+				<div class="footer__menu">
+					<button class="footer__button"><span>МЕНЮ САЙТА </span><img src="img/foter/arrow.svg" alt=""></button>
+					<ul class="footer__list">
+						<li class="footer__item"><a href="#">Главная</a></li>
+						<li class="footer__item"><a data-goto=".categories" href="#">Услуги</a></li>
+						<li class="footer__item"><a href="#">Калькулятор</a></li>
+						<li class="footer__item"><a data-goto=".tips" href="#">Этапы работ</a></li>
+						<li class="footer__item"><a href="#">Скачать каталог</a></li>
+						<li class="footer__item"><a data-goto=".slider" href="#">Наши работы</a></li>
+						<li class="footer__item"><a data-goto=".guarantee" href="#">Гарантия</a></li>
+						<li class="footer__item"><a href="#">Частые вопросы</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script src="js/app.min.js?_v=20250120020505"></script>
+	<!-- Через CDN -->
+</body>
+
+</html>
