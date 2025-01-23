@@ -10,7 +10,7 @@
 			opacity: 1;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250120115147">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250123143017">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -273,6 +273,287 @@
 
 				</div>
 			</section>
+			<section class="page__calculator calculator">
+				<div class="calculator__container ">
+					<div class="calculator__body">
+						<!-- верх квиза -->
+						<div id="calc" class="calculator__top">
+							<h4 class="calculator__top-title">Рассчитайте стоимость перетяжки в калькуляторе за 1 минуту!</h4>
+							<!-- <div class="calculator__top-subtitle">это бесплатно и интересно</div> -->
+						</div>
+						<!-- Оболонка слайдера -->
+						<div id="wrapper-content" class="calculator__wrapper-content">
+							<div class="calculator__slider swiper swiper-container">
+								<!-- Частина слайдера, що рухається -->
+								<form data-popup-message="#form-message" data-ajax action="files/sendmail/sendmail.php" method="POST" class="calculator__wrapper swiper-wrapper">
+									<!-- 1 Слайд -->
+									<div class="calculator__slide swiper-slide slide-calculator slide-main-block">
+										<div class="slide-calculator__body">
+											<h5 class="slide-calculator__title">Где нужно выполнить перетяжку?</h5>
+											<div class="options">
+												<div class="options__item">
+													<input data-required id="o_1" class="options__input input" checked type="radio" value="На дому" name="step_1">
+													<label for="o_1" class="options__label">
+														<div class="options__text options__text-ibg"><img src="img/calc/01.jpg" alt="#"></div>
+
+													</label>
+													<h3 class="options__title">На дому</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_2" class="options__input input" checked type="radio" value="В мастерской" name="step_1">
+													<label for="o_2" class="options__label">
+														<div class="options__text options__text-ibg"><img src="img/calc/02.webp" alt="#"></div>
+													</label>
+													<h3 class="options__title">В мастерской</h3>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<!-- 2 слайд -->
+									<div class="calculator__slide swiper-slide slide-calculator slide-main-block">
+										<div class="slide-calculator__body">
+											<h5 class="slide-calculator__title">Какую мебель нужно перетянуть?</h5>
+											<div class="options">
+												<div class="options__item">
+													<input data-required id="o_4" class="options__input input" checked type="radio" value="Прямой диван" name="step_2">
+													<label for="o_4" class="options__label">
+														<div class="options__text"><img src="img/calc/03.jpg" alt="#"></div>
+
+													</label>
+													<h3 class="options__title">Прямой диван</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_5" class="options__input input" checked type="radio" value="Угловой диван" name="step_2">
+													<label for="o_5" class="options__label">
+														<div class="options__text"><img src="img/calc/04.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Угловой диван</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_6" class="options__input input" checked type="radio" value="Кровать полностью" name="step_2">
+													<label for="o_6" class="options__label">
+														<div class="options__text"><img src="img/calc/05.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Кровать полностью</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_7" class="options__input input" checked type="radio" value="Кресло" name="step_2">
+													<label for="o_7" class="options__label">
+														<div class="options__text"><img src="img/calc/06.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Кресло</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_8" class="options__input input" checked type="radio" value="Стулья" name="step_2">
+													<label for="o_8" class="options__label">
+														<div class="options__text"><img src="img/calc/07.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Стулья</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_20" class="options__input input" checked type="radio" value="Изголовье кровати" name="step_2">
+													<label for="o_20" class="options__label">
+														<div class="options__text"><img src="img/calc/08.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Изголовье кровати</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_21" class="options__input input" checked type="radio" value="Другая мебель" name="step_2">
+													<label for="o_21" class="options__label">
+														<div class="options__text"><img src="img/calc/09.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Другая мебель</h3>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<!-- 3 слайд -->
+									<div class="calculator__slide swiper-slide slide-calculator slide-main-block">
+										<div class="slide-calculator__body">
+											<h5 class="slide-calculator__title">Какой именно требуется ремонт?</h5>
+											<div class="slide-calculator__subtitle">Выберите 1 или несколько вариантов и нажмите -
+												Далее</div>
+											<div class="options">
+												<div class="options__item">
+													<input data-required id="o_9" class="options__input input" checked type="radio" value="Замена обивочной ткани/кожи" name="step_3">
+													<label for="o_9" class="options__label">
+														<div class="options__text"><img src="img/calc/10.jpg" alt="#"></div>
+
+													</label>
+													<h3 class="options__title">Замена обивочной ткани/кожи</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_10" class="options__input input" checked type="radio" value="Замена наполнителя" name="step_3">
+													<label for="o_10" class="options__label">
+														<div class="options__text"><img src="img/calc/11.jpg" alt="#"></div>
+
+													</label>
+													<h3 class="options__title">Замена наполнителя</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_11" class="options__input input" checked type="radio" value="Замена пружин и пружинных блоков" name="step_3">
+													<label for="o_11" class="options__label">
+														<div class="options__text"><img src="img/calc/12.jpg" alt="#"></div>
+
+													</label>
+													<h3 class="options__title">Замена пружин и пружинных блоков</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_12" class="options__input input" checked type="radio" value="Замена механизмов" name="step_3">
+													<label for="o_12" class="options__label">
+														<div class="options__text"><img src="img/calc/13.jpg" alt="#"></div>
+
+													</label>
+													<h3 class="options__title">Замена механизмов</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_13" class="options__input input" checked type="radio" value="Ремонт каркаса мебели" name="step_3">
+													<label for="o_13" class="options__label">
+														<div class="options__text"><img src="img/calc/14.jpg" alt="#"></div>
+
+													</label>
+													<h3 class="options__title">Ремонт каркаса мебели</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_14" class="options__input input" checked type="radio" value="Затрудняюсь / нужна консультация" name="step_3">
+													<label for="o_14" class="options__label">
+														<div class="options__text"><img src="img/calc/15.jpg" alt="#"></div>
+
+													</label>
+													<h3 class="options__title">Затрудняюсь / нужна консультация</h3>
+												</div>
+
+											</div>
+										</div>
+
+									</div>
+									<!-- 4 слайд -->
+									<div class="calculator__slide swiper-slide slide-calculator slide-main-block">
+										<div class="slide-calculator__body">
+											<h5 class="slide-calculator__title">Какой подарок вы бы хотели при заказе перетяжки?
+											</h5>
+											<div class="options">
+												<div class="options__item">
+													<input data-required id="o_16" class="options__input input" checked type="radio" value="Дизайнерские подушки 40*40" name="step_4">
+													<label for="o_16" class="options__label">
+														<div class="options__text"><img src="img/calc/16.jpg" alt="#"></div>
+
+													</label>
+													<h3 class="options__title">Дизайнерские подушки 40*40</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_17" class="options__input input" checked type="radio" value="Два м2 ткани бесплатно" name="step_4">
+													<label for="o_17" class="options__label">
+														<div class="options__text"><img src="img/calc/17.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Два м2 ткани бесплатно</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_18" class="options__input input" checked type="radio" value="Ремонт каркаса бесплатно" name="step_4">
+													<label for="o_18" class="options__label">
+														<div class="options__text"><img src="img/calc/18.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Ремонт каркаса бесплатно</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_19" class="options__input input" checked type="radio" value="Без подарка" name="step_4">
+													<label for="o_19" class="options__label">
+														<div class="options__text"><img src="img/calc/19.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Без подарка</h3>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<!-- 5 слайд -->
+									<div class="calculator__slide swiper-slide slide-calculator slide-main-block">
+										<div class="slide-calculator__body">
+											<h5 class="slide-calculator__title">По какому адресу нужно будет приехать мастеру, если
+												наше предложение вам понравится?</h5>
+											<div class="slide-calculator__subtitle">Можно указать только улицу, или улицу и дом
+											</div>
+											<textarea data-autoheight data-autoheight-min='150' data-autoheight-max='200' autocomplete="off" data-required name="text" placeholder="Например: г. Калининград, ул. Горького, 44" data-error="Обязательное поле" class="textarea__input input"></textarea>
+
+										</div>
+
+									</div>
+									<!-- Конечная страница !форма! -->
+									<div class="calculator__slide swiper-slide slide-calculator slide-calculator-block  slide-main-block">
+
+										<div class="slide-calculator-block__content">
+											<h3 class="slide-calculator-block__title-last">Расчёт стоимости будет готов в течение 1
+												минуты . Куда отправить?
+											</h3>
+											<p class="slide-calculator-block__text">
+												Зафиксируем за вашим номером скидку 10% + подарок, который вы выбрали</p>
+											<div class="slide-calculator-block__form">
+												<div class="slide-calculator-block__subtitle">Как удобнее получить?</div>
+												<label class="slide-calculator-block__label">Ваше Имя</label>
+												<input data-required type="text" name="name" data-error="заполните поле" placeholder="Евгений" class="data-contact__input input">
+												<label class="slide-calculator-block__label">Ваш телефон</label>
+												<input data-required id="phone" type="text" name="phone" data-error="заполните поле" placeholder="+375 (__) ___-__-__" class="data-contact__input input">
+												<!-- <button type="submit" class="slide-calculator-block__button button">Получить примеры + смету + подарок</button> -->
+												<input type="submit" class="slide-calculator-block__button button" value="ПОЛУЧИТЬ РАСЧЁТ СТОИМОСТИ">
+												<div class="checkbox">
+													<input data-required id="c_5" data-error="Ознакомтесь с обработкой своих данных" class="checkbox__input" type="checkbox" value="Принято" name="check">
+													<label for="c_5" class="checkbox__label"><span class="checkbox__text">Соглашаюсь
+															с <a href="#" style="color: rgb(22, 216, 0);"><u>обработкой своих
+																	данных</u></a></span>
+
+													</label>
+												</div>
+											</div>
+										</div>
+
+
+									</div>
+								</form>
+
+								<div id="progress" class="calculator__progress">
+									<div class="calculator__progress-body">
+										<div class="calculator__pagination swiper-pagination"></div>
+										<div class="fraction-controll">
+											<span class="fraction-controll__current">01</span>
+											<span class="fraction-controll__all">10</span>
+											<div class="fraction-controll__progress"><span>Готово:</span> 0%</div>
+										</div>
+									</div>
+									<div class="calculator__button-body">
+										<div class="calculator__button-next ">Далее
+											<svg class="mdi-icon mdi-24px" viewBox="0 0 24 24">
+												<path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" stroke-width="0" fill-rule="nonzero"></path>
+											</svg>
+										</div>
+
+										<div class="calculator__button-prev ">
+											<svg class="mdi-icon mdi-24px" viewBox="0 0 24 24">
+												<path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" stroke-width="0" fill-rule="nonzero"></path>
+											</svg>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div id="banner" class="calculator__banner banner-calculator">
+								<div class="banner-calculator__avatar"> <img src="img/calc/avatar.png" alt="#"></div>
+								<div class="banner-calculator__name"> Дмитрий Смирнов, Менеджер Мастер Мебели 39</div>
+								<p class="banner-calculator__text">Спасибо за ответы! Вы нам очень помогли в расчёте, скоро
+									пришлём результат</p>
+								<p class="banner-calculator__text banner-calculator__text--gold">Ответьте на 5 вопросов и
+									получите скидку 10% + подарок на выбор!</p>
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</section>
+
 			<section class="page__slider slider">
 				<div class="slider__container">
 					<img data-prlx-mouse class="slider__decor" src="img/categories/decor.png" alt="#">
@@ -592,7 +873,7 @@
 		</footer>
 	</div>
 
-	<script src="js/app.min.js?_v=20250120115147"></script>
+	<script src="js/app.min.js?_v=20250123143017"></script>
 	<!-- Через CDN -->
 </body>
 

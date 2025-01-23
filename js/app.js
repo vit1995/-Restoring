@@ -804,6 +804,59 @@
                 FLS(`[gotoBlock]: Юхуу...їдемо до ${targetBlock}`);
             } else FLS(`[gotoBlock]: Йой... Такого блоку немає на сторінці: ${targetBlock}`);
         };
+        function formFieldsInit(options = {
+            viewPass: false,
+            autoHeight: false
+        }) {
+            document.body.addEventListener("focusin", (function(e) {
+                const targetElement = e.target;
+                if ("INPUT" === targetElement.tagName || "TEXTAREA" === targetElement.tagName) {
+                    if (!targetElement.hasAttribute("data-no-focus-classes")) {
+                        targetElement.classList.add("_form-focus");
+                        targetElement.parentElement.classList.add("_form-focus");
+                    }
+                    formValidate.removeError(targetElement);
+                    targetElement.hasAttribute("data-validate") ? formValidate.removeError(targetElement) : null;
+                }
+            }));
+            document.body.addEventListener("focusout", (function(e) {
+                const targetElement = e.target;
+                if ("INPUT" === targetElement.tagName || "TEXTAREA" === targetElement.tagName) {
+                    if (!targetElement.hasAttribute("data-no-focus-classes")) {
+                        targetElement.classList.remove("_form-focus");
+                        targetElement.parentElement.classList.remove("_form-focus");
+                    }
+                    targetElement.hasAttribute("data-validate") ? formValidate.validateInput(targetElement) : null;
+                }
+            }));
+            if (options.viewPass) document.addEventListener("click", (function(e) {
+                let targetElement = e.target;
+                if (targetElement.closest('[class*="__viewpass"]')) {
+                    let inputType = targetElement.classList.contains("_viewpass-active") ? "password" : "text";
+                    targetElement.parentElement.querySelector("input").setAttribute("type", inputType);
+                    targetElement.classList.toggle("_viewpass-active");
+                }
+            }));
+            if (options.autoHeight) {
+                const textareas = document.querySelectorAll("textarea[data-autoheight]");
+                if (textareas.length) {
+                    textareas.forEach((textarea => {
+                        const startHeight = textarea.hasAttribute("data-autoheight-min") ? Number(textarea.dataset.autoheightMin) : Number(textarea.offsetHeight);
+                        const maxHeight = textarea.hasAttribute("data-autoheight-max") ? Number(textarea.dataset.autoheightMax) : 1 / 0;
+                        setHeight(textarea, Math.min(startHeight, maxHeight));
+                        textarea.addEventListener("input", (() => {
+                            if (textarea.scrollHeight > startHeight) {
+                                textarea.style.height = `auto`;
+                                setHeight(textarea, Math.min(Math.max(textarea.scrollHeight, startHeight), maxHeight));
+                            }
+                        }));
+                    }));
+                    function setHeight(textarea, height) {
+                        textarea.style.height = `${height}px`;
+                    }
+                }
+            }
+        }
         let formValidate = {
             getErrors(form) {
                 let error = 0;
@@ -6575,6 +6628,61 @@
                 },
                 on: {}
             });
+            if (document.querySelector(".calculator__slider")) new core(".calculator__slider", {
+                modules: [ Navigation, Pagination, EffectFade ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                autoHeight: true,
+                speed: 800,
+                pagination: {
+                    el: ".calculator__pagination",
+                    type: "progressbar",
+                    clickable: true
+                },
+                simulateTouch: false,
+                allowTouchMove: false,
+                effect: "fade",
+                fadeEffect: {
+                    crossFade: true
+                },
+                navigation: {
+                    prevEl: ".calculator__button-prev",
+                    nextEl: ".calculator__button-next"
+                },
+                on: {
+                    init: function(swiper) {
+                        const allSlides = document.querySelector(".fraction-controll__all");
+                        const allSlidesItems = document.querySelectorAll(".slide-main-block:not(.swiper-slide-duplicate)");
+                        allSlides.innerHTML = allSlidesItems.length < 10 ? `0${allSlidesItems.length}` : allSlidesItems.length;
+                        const progressElement = document.querySelector(".fraction-controll__progress");
+                        progressElement.innerHTML = `<span>Готово</span>: 0%`;
+                        const progressBarFill = document.querySelector(".swiper-pagination-progressbar-fill");
+                        progressBarFill.style.width = "0%";
+                    },
+                    slideChange: function(swiper) {
+                        const currentSlide = document.querySelector(".fraction-controll__current");
+                        currentSlide.innerHTML = swiper.realIndex + 1 < 10 ? `0${swiper.realIndex + 1}` : swiper.realIndex + 1;
+                        const progress = swiper.realIndex / (swiper.slides.length - 1) * 100;
+                        const progressElement = document.querySelector(".fraction-controll__progress");
+                        progressElement.innerHTML = `<span>Готово</span>: ${progress.toFixed(2)}%`;
+                        const progressBarFill = document.querySelector(".swiper-pagination-progressbar-fill");
+                        progressBarFill.style.width = `${progress}%`;
+                        if (0 === swiper.realIndex) {
+                            progressElement.innerHTML = `<span>Готово</span>: 0%`;
+                            progressBarFill.style.width = "0%";
+                        }
+                    },
+                    reachEnd: function(swiper) {
+                        document.getElementById("progress").style.display = "none";
+                        document.getElementById("calc").style.display = "none";
+                        document.getElementById("banner").style.display = "none";
+                        document.getElementById("wrapper-content").classList.add("last");
+                    },
+                    fromEdge: function(swiper) {}
+                }
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();
@@ -8597,6 +8705,10 @@ PERFORMANCE OF THIS SOFTWARE.
         addLoadedClass();
         menuInit();
         spollers();
+        formFieldsInit({
+            viewPass: false,
+            autoHeight: true
+        });
         formSubmit();
         pageNavigation();
         headerScroll();
